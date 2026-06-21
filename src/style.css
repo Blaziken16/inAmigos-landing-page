@@ -1,0 +1,8 @@
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/layouts.css';
+@import './styles/components.css';
+@import './styles/screens/home.css';
+@import './styles/screens/about.css';
+@import './styles/screens/gallery.css';
+@import './styles/screens/volunteers.css';
