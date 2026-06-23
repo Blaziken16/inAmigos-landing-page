@@ -23,6 +23,13 @@ import { initMisc } from './animations/misc.js';
 const app = document.getElementById('app');
 
 app.innerHTML = `
+  <div class="global-bg">
+    <div class="mesh-gradient"></div>
+    <div class="glass-sphere sphere-1"></div>
+    <div class="glass-sphere sphere-2"></div>
+    <div class="glass-sphere sphere-3"></div>
+  </div>
+
   ${CustomCursor()}
   ${Navbar()}
   ${MobileMenu()}

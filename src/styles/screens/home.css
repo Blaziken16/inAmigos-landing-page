@@ -49,14 +49,14 @@
 /* ============================================================
    HOME — IMPACT COUNTER
    ============================================================ */
-.impact-section{background:var(--color-text);padding-block:clamp(var(--space-16),6vw,var(--space-20));position:relative;overflow:hidden;}
+.impact-section{background:transparent;padding-block:clamp(var(--space-16),6vw,var(--space-20));position:relative;overflow:hidden;}
 .impact-section .gradient-orb{opacity:0.1;}
 .impact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-8);position:relative;z-index:2;}
 .impact-item{text-align:center;}
-.impact-number{font-family:var(--font-display);font-weight:900;font-size:var(--text-2xl);color:#fff;line-height:1;margin-bottom:var(--space-2);}
+.impact-number{font-family:var(--font-display);font-weight:900;font-size:var(--text-2xl);color:var(--color-text);line-height:1;margin-bottom:var(--space-2);}
 .impact-number .counter{display:inline-block;}
 .impact-unit{color:var(--color-primary);font-size:var(--text-xl);}
-.impact-label{font-size:var(--text-sm);color:rgba(255,255,255,0.55);line-height:1.4;}
+.impact-label{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.4;}
 
 
 /* ============================================================

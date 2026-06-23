@@ -6,29 +6,25 @@ export function HomePage() {
   return `
     <div class="page-section active" id="page-home">
       <section class="hero" id="hero">
-        <div class="hero-mesh"></div>
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-
         <div class="container hero-content">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
+          <div class="hero-badge load-fade">
+            <div class="hero-badge-dot"></div>
             Since 2020 · Chhattisgarh, India
           </div>
-          <h1 class="hero-headline">
+          <h1 class="hero-headline load-fade load-delay-1">
             Together<br/>
             We <span class="serif-word">Rise,</span><br/>
             Together We<br/>Care.
           </h1>
-          <p class="hero-body">
+          <p class="hero-body load-fade load-delay-2">
             InAmigos Foundation is a Section 8 non-profit dedicated to creating lasting social impact through education, women's empowerment, animal welfare, environmental conservation, and skill development across India.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions load-fade load-delay-2">
             <a href="#" class="btn btn-primary" data-route="volunteers">Join Our Mission →</a>
-            <a href="#" class="btn btn-ghost" data-route="about">Learn More</a>
+            <a href="#projects" class="btn btn-glass">Learn More</a>
           </div>
-          <div class="hero-stats">
+          
+          <div class="hero-stats load-fade load-delay-3">
             <div><div class="hero-stat-value">50K+</div><div class="hero-stat-label">Meals Distributed</div></div>
             <div><div class="hero-stat-value">30K+</div><div class="hero-stat-label">Interns Trained</div></div>
             <div><div class="hero-stat-value">900+</div><div class="hero-stat-label">Women Empowered</div></div>
@@ -38,9 +34,15 @@ export function HomePage() {
 
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-cards-float">
-            ${HeroFloatCard({ bg: 'rgba(242,96,138,0.12)', icon: '🍽️', label: 'Project Seva', value: '50,000+ Meals' })}
-            ${HeroFloatCard({ bg: 'rgba(91,164,207,0.12)', icon: '🌱', label: 'Project Prakriti', value: '20,000+ Trees' })}
-            ${HeroFloatCard({ bg: 'rgba(159,125,234,0.12)', icon: '👩‍💼', label: 'Project Udaan', value: '900+ Women' })}
+            <div class="float-item float-item-1" data-parallax="0.08">
+              ${HeroFloatCard({ bg: 'rgba(255,127,162,0.15)', icon: '🍽️', label: 'Project Seva', value: '50,000+ Meals' })}
+            </div>
+            <div class="float-item float-item-2" data-parallax="0.15">
+              ${HeroFloatCard({ bg: 'rgba(162,210,255,0.15)', icon: '🌱', label: 'Project Prakriti', value: '20,000+ Trees' })}
+            </div>
+            <div class="float-item float-item-3" data-parallax="0.05">
+              ${HeroFloatCard({ bg: 'rgba(203,170,203,0.15)', icon: '👩‍💼', label: 'Project Udaan', value: '900+ Women' })}
+            </div>
           </div>
         </div>
       </section>
@@ -82,35 +84,40 @@ export function HomePage() {
         </div>
       </section>
 
-      <section class="cta-section section">
+      <section class="cta-section section cinematic-cta">
         <div class="container">
-          <div class="cta-inner reveal">
-            <div class="gradient-orb orb-1" style="opacity:0.15;width:300px;height:300px;"></div>
-            <div class="gradient-orb orb-2" style="opacity:0.1;width:240px;height:240px;"></div>
-            <div class="section-label">Be the Change</div>
-            <h2 class="cta-title">Join the <span class="serif-word">Movement.</span><br/>Make a Difference.</h2>
-            <p class="cta-body">Whether you donate, volunteer your time, or simply spread the word — every action matters. Together, we build a more compassionate India.</p>
-            <div class="cta-cards">
-              <div class="cta-card">
-                <div class="cta-card-icon">💛</div>
-                <div class="cta-card-title">Donate</div>
-                <p class="cta-card-desc">Your contribution directly funds meals, education, and animal care. Tax exemption available under 80G.</p>
-                <a href="https://inamigosfoundation.org.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now →</a>
+          <div class="cta-inner reveal-scale">
+            <!-- Glass background elements for CTA -->
+            <div class="glass-sphere" style="width: 250px; height: 250px; top: -50px; right: -50px; background: rgba(255,127,162,0.2); z-index: 0; filter: blur(4px);"></div>
+            <div class="glass-sphere" style="width: 150px; height: 150px; bottom: -30px; left: -30px; background: rgba(162,210,255,0.2); z-index: 0; filter: blur(2px);"></div>
+            
+            <div style="position: relative; z-index: 1;">
+              <div class="section-label">Be the Change</div>
+              <h2 class="cta-title">Leave a Legacy of <span class="serif-word" style="color:var(--brand-rose);">Compassion.</span></h2>
+              <p class="cta-body" style="color: var(--color-text-muted); font-size: var(--text-lg); max-width: 50ch; margin-inline: auto;">Whether you donate, volunteer your time, or simply spread the word — every action matters. Together, we build a more compassionate India.</p>
+              
+              <div class="cta-cards">
+                <div class="cta-card glass-card reveal-fade reveal-delay-1">
+                  <div class="cta-card-icon">💛</div>
+                  <div class="cta-card-title">Donate</div>
+                  <p class="cta-card-desc">Your contribution directly funds meals, education, and animal care. Tax exemption under 80G.</p>
+                  <a href="https://inamigosfoundation.org.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Donate Now →</a>
+                </div>
+                <div class="cta-card glass-card reveal-fade reveal-delay-2">
+                  <div class="cta-card-icon">🙌</div>
+                  <div class="cta-card-title">Volunteer</div>
+                  <p class="cta-card-desc">Join thousands of dedicated volunteers and contribute your skills where they matter most.</p>
+                  <a href="#" class="btn btn-ghost" data-route="volunteers" style="width:100%;justify-content:center;">Apply Now →</a>
+                </div>
+                <div class="cta-card glass-card reveal-fade reveal-delay-3">
+                  <div class="cta-card-icon">🤝</div>
+                  <div class="cta-card-title">Partner With Us</div>
+                  <p class="cta-card-desc">Corporate partnerships and CSR initiatives to scale our impact nationwide.</p>
+                  <a href="mailto:contact@inamigos.org" class="btn btn-ghost" style="width:100%;justify-content:center;">Contact Us →</a>
+                </div>
               </div>
-              <div class="cta-card">
-                <div class="cta-card-icon">🙌</div>
-                <div class="cta-card-title">Become a Volunteer</div>
-                <p class="cta-card-desc">Join thousands of dedicated volunteers and contribute your skills where they matter most.</p>
-                <a href="#" class="btn btn-ghost" data-route="volunteers" style="width:100%;justify-content:center;">Apply Now →</a>
-              </div>
-              <div class="cta-card">
-                <div class="cta-card-icon">🌐</div>
-                <div class="cta-card-title">Spread Awareness</div>
-                <p class="cta-card-desc">Share our work on social media using <strong>#InAmigos</strong> and help us reach more hearts and minds.</p>
-                <a href="https://www.instagram.com/inamigos" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%;justify-content:center;">Follow & Share →</a>
-              </div>
+              <p style="font-size:var(--text-sm);color:var(--color-text-faint);margin-top:var(--space-8);">80G & 12A Certified · CSR-1 Registered · NITI Aayog Registered · ISO 9001:2015 Certified</p>
             </div>
-            <p style="font-size:var(--text-sm);color:var(--color-text-faint);">80G & 12A Certified · CSR-1 Registered · NITI Aayog Registered · ISO 9001:2015 Certified</p>
           </div>
         </div>
       </section>

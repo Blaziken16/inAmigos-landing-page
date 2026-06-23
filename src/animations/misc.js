@@ -28,6 +28,25 @@ export function initMisc() {
     }, { passive: true });
   }
 
+  // Parallax JS Logic
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  if (parallaxEls.length > 0) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const y = window.scrollY;
+          parallaxEls.forEach(el => {
+            const speed = parseFloat(el.getAttribute('data-parallax') || 0);
+            el.style.transform = `translateY(${y * speed}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
   // Form submit
   const form = document.getElementById('volunteerForm');
   const success = document.getElementById('formSuccess');

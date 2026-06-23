@@ -2,21 +2,25 @@
    DESIGN TOKENS — Customize content/colors here
    ============================================================ */
 :root {
-  /* === BRAND COLORS — change these to retheme the whole site === */
-  --brand-rose:    #f2608a;
-  --brand-peach:   #f4956a;
-  --brand-sky:     #5ba4cf;
-  --brand-mint:    #3dbda0;
-  --brand-lavender:#9f7dea;
-  --brand-gold:    #e8a838;
+  /* === BRAND COLORS — Apple-inspired Soft Pastels === */
+  --brand-rose:    #ff7fa2; /* Soft Rose */
+  --brand-peach:   #ffc8a2; /* Soft Peach */
+  --brand-sky:     #a2d2ff; /* Soft Blue */
+  --brand-mint:    #a8e6cf; /* Soft Mint */
+  --brand-lavender:#cbaacb; /* Soft Lavender */
+  --brand-gold:    #ffe1a8;
 
-  /* Surfaces */
-  --color-bg:           #fdfcf9;
+  /* Surfaces & Glassmorphism */
+  --color-bg:           #fbfbfa;
   --color-surface:      #ffffff;
-  --color-surface-2:    #faf8f5;
-  --color-surface-glass: rgba(255,255,255,0.62);
-  --color-divider:      rgba(0,0,0,0.07);
-  --color-border:       rgba(0,0,0,0.09);
+  --color-surface-2:    #f5f5f7;
+  --color-surface-glass: rgba(255, 255, 255, 0.65);
+  --color-surface-glass-heavy: rgba(255, 255, 255, 0.4);
+  --color-surface-glass-light: rgba(255, 255, 255, 0.15);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
+  --color-glass-blur:   blur(24px);
+  --color-divider:      rgba(0,0,0,0.06);
+  --color-border:       rgba(0,0,0,0.08);
 
   /* Text */
   --color-text:         #1a1814;
@@ -54,18 +58,23 @@
   --font-serif:   'Instrument Serif','Georgia',serif;
   --font-body:    'Satoshi','Inter',sans-serif;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
-  --shadow-lg: 0 16px 48px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
-  --shadow-xl: 0 32px 80px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.07);
+  /* Shadows & Depth */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.04);
+  --shadow-xl: 0 40px 100px rgba(0,0,0,0.1), 0 10px 40px rgba(0,0,0,0.05);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(255, 127, 162, 0.4);
 
-  /* Transitions */
+  /* Transitions & Curves */
   --ease-out: cubic-bezier(0.16,1,0.3,1);
   --ease-in:  cubic-bezier(0.4,0,1,1);
-  --t-fast: 180ms;
-  --t-med:  350ms;
-  --t-slow: 600ms;
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.15); /* Bouncy float */
+  --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
+  --t-fast: 200ms;
+  --t-med:  400ms;
+  --t-slow: 700ms;
 
   /* ============================================================
      CONTENT — Change text, names, numbers, links here
@@ -76,19 +85,25 @@
 }
 
 [data-theme="dark"] {
-  --color-bg:           #111010;
-  --color-surface:      #181716;
-  --color-surface-2:    #1e1d1b;
-  --color-surface-glass:rgba(22,21,20,0.72);
-  --color-divider:      rgba(255,255,255,0.07);
-  --color-border:       rgba(255,255,255,0.10);
-  --color-text:         #e8e5e0;
-  --color-text-muted:   #8a8880;
-  --color-text-faint:   #4a4946;
-  --color-primary:      #f2608a;
-  --color-primary-hover:#ff7fa2;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-  --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
-  --shadow-xl: 0 32px 80px rgba(0,0,0,0.6);
+  --color-bg:           #000000;
+  --color-surface:      #121212;
+  --color-surface-2:    #1c1c1e;
+  --color-surface-glass: rgba(30, 30, 30, 0.65);
+  --color-surface-glass-heavy: rgba(30, 30, 30, 0.4);
+  --color-surface-glass-light: rgba(30, 30, 30, 0.15);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-divider:      rgba(255,255,255,0.08);
+  --color-border:       rgba(255,255,255,0.12);
+  --color-text:         #ffffff;
+  --color-text-muted:   #a1a1a6;
+  --color-text-faint:   #6e6e73;
+  --color-primary:      #ff7fa2;
+  --color-primary-hover:#ff9cb6;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.5);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.6);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.8);
+  --shadow-xl: 0 40px 100px rgba(0,0,0,0.9);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 0 20px rgba(255, 127, 162, 0.2);
 }
